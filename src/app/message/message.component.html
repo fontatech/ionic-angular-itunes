@@ -1,0 +1,26 @@
+<ion-item
+  *ngIf="app"
+  [routerLink]="'/message/' + app.id"
+  [detail]="false"
+>
+  <div class="ion-padding">
+    <ion-label class="ion-text-wrap">
+        <img [src]="app.imageUrl" />
+        <h2>
+          {{ app.name }}
+          <span class="date">
+            <ion-icon
+              aria-hidden="true"
+              name="chevron-forward"
+              size="small"
+              *ngIf="isIos()"
+            ></ion-icon>
+          </span>
+        </h2>
+        <h3>{{ app.price }}</h3>
+        <p style="width: 90vw">
+          {{ app.description }}
+        </p>
+    </ion-label>
+  </div>
+</ion-item>

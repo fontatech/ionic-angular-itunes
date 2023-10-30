@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+        [text]="getBackButtonText()"
+        defaultHref="/"
+      ></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" *ngIf="app">
+  <ion-item>
+    <img [src]="app.imageUrl" class="preview-img" />
+    <ion-label class="ion-text-wrap">
+      <h2>
+        {{ app.name }}
+        <span class="date">
+          <ion-note>{{ app.price }}</ion-note>
+        </span>
+      </h2>
+    </ion-label>
+  </ion-item>
+
+  <div class="ion-padding">
+    <h2>Category: {{ app.category }}</h2>
+    <p>
+      {{ app.description }}
+    </p>
+  </div>
+</ion-content>
